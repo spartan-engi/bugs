@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/monorail_trackCornerSmall.obj-a1d0a8897991fff885ae3ae439cba9dc.mesh"
+
+[deps]
+
+files=[ "res://.import/monorail_trackCornerSmall.obj-a1d0a8897991fff885ae3ae439cba9dc.mesh" ]
+
+source_file="res://Assets/monorail_trackCornerSmall.obj"
+dest_files=[ "res://.import/monorail_trackCornerSmall.obj-a1d0a8897991fff885ae3ae439cba9dc.mesh", "res://.import/monorail_trackCornerSmall.obj-a1d0a8897991fff885ae3ae439cba9dc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

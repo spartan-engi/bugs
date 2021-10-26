@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/machine_generatorLarge.obj-837ec986bff4ef9f9981a2634590ebf7.mesh"
+
+[deps]
+
+files=[ "res://.import/machine_generatorLarge.obj-837ec986bff4ef9f9981a2634590ebf7.mesh" ]
+
+source_file="res://Assets/machine_generatorLarge.obj"
+dest_files=[ "res://.import/machine_generatorLarge.obj-837ec986bff4ef9f9981a2634590ebf7.mesh", "res://.import/machine_generatorLarge.obj-837ec986bff4ef9f9981a2634590ebf7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

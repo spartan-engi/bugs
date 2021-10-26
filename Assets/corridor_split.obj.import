@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/corridor_split.obj-6500f93efc8c93f62f473c93481e3412.mesh"
+
+[deps]
+
+files=[ "res://.import/corridor_split.obj-6500f93efc8c93f62f473c93481e3412.mesh" ]
+
+source_file="res://Assets/corridor_split.obj"
+dest_files=[ "res://.import/corridor_split.obj-6500f93efc8c93f62f473c93481e3412.mesh", "res://.import/corridor_split.obj-6500f93efc8c93f62f473c93481e3412.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,398 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/rocket_topA.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/rocket_sidesA.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/rocket_finsA.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/rocket_finsB.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/rocket_baseA.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/hangar_roundGlass.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/monorail_trackSupportCorner.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/chimney_detailed.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Assets/machine_barrel.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://Assets/machine_generator.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://Assets/satelliteDish.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Shaders/MetalRed.tres" type="Material" id=12]
+[ext_resource path="res://Shaders/Dark.tres" type="Material" id=13]
+[ext_resource path="res://Shaders/Metal.tres" type="Material" id=14]
+[ext_resource path="res://Shaders/MetalDark.tres" type="Material" id=15]
+[ext_resource path="res://Shaders/2Dark.tres" type="Material" id=16]
+[ext_resource path="res://Shaders/2MetalDark.tres" type="Material" id=17]
+[ext_resource path="res://Shaders/2Metal.tres" type="Material" id=18]
+[ext_resource path="res://Shaders/2MetalRed.tres" type="Material" id=19]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.25098, 0.705882, 0.72549, 1 )
+emission_enabled = true
+emission = Color( 0.25098, 0.705882, 0.72549, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_box_extents = Vector3( 0.304, 0, 0.304 )
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+flatness = 0.98
+gravity = Vector3( 0, -40, 0 )
+initial_velocity = 25.0
+scale_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+params_grow = true
+params_grow_amount = 0.0
+albedo_color = Color( 1, 0.937255, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 0, 0, 1 )
+emission_energy = 10.3
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=4]
+material = SubResource( 3 )
+radius = 0.5
+height = 1.0
+
+[sub_resource type="CylinderShape" id=5]
+radius = 2.0
+
+[sub_resource type="Animation" id=6]
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CSGBox:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 6.2, 7.5, 10.5, 11.7, 12 ),
+"transitions": PoolRealArray( 0.435275, 0.435275, 0.277392, 7.21001, 7.21001, 0.277392, 0.435275 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0.01, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 0.01, 1, 1 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4 ),
+"transitions": PoolRealArray( 1.86607, 0.34151, 3, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 25, 0 ), Vector3( 0, 9, 0 ), Vector3( 0, 0.154197, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CSGBox:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 4.5, 0 ), Vector3( 0, 4.5, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeshInstance2:material/0:shader_param/slice_anim")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeshInstance2:material/1:shader_param/slice_anim")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MeshInstance2:material/2:shader_param/slice_anim")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MeshInstance/Particles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("MeshInstance/MeshInstance2/MeshInstance3/MeshInstance/MeshInstance4:material/3:shader_param/slice_anim")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("MeshInstance/MeshInstance2/MeshInstance3/MeshInstance/MeshInstance4:material/2:shader_param/slice_anim")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("MeshInstance/MeshInstance2/MeshInstance3/MeshInstance/MeshInstance4:material/1:shader_param/slice_anim")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("MeshInstance/MeshInstance2/MeshInstance3/MeshInstance/MeshInstance4:material/0:shader_param/slice_anim")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("MeshInstance2:material/3:shader_param/slice_anim")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 7.5, 10.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 4.5, 4.5 ]
+}
+
+[node name="MainFrame" type="Area" groups=[
+"Building",
+]]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+width = 5.0
+height = 0.05
+depth = 5.0
+material = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 15 )
+material/1 = ExtResource( 14 )
+material/2 = ExtResource( 12 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 12 )
+material/2 = ExtResource( 15 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance/MeshInstance2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 15 )
+material/2 = ExtResource( 13 )
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance/MeshInstance2/MeshInstance3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950987, 0 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 14 )
+material/1 = ExtResource( 13 )
+material/2 = ExtResource( 15 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="MeshInstance/MeshInstance2/MeshInstance3/MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 15 )
+material/1 = ExtResource( 12 )
+material/2 = ExtResource( 13 )
+material/3 = ExtResource( 14 )
+
+[node name="Particles" type="Particles" parent="MeshInstance"]
+emitting = false
+amount = 80
+randomness = 0.49
+visibility_aabb = AABB( -4, 2, -4, 8, -40, 8 )
+local_coords = false
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = ExtResource( 6 )
+material/0 = ExtResource( 19 )
+material/1 = ExtResource( 17 )
+material/2 = ExtResource( 18 )
+material/3 = ExtResource( 16 )
+
+[node name="Spatial" type="Spatial" parent="MeshInstance2"]
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 1.5, -1, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 1.5, -0.5, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.5, -1, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.5, -0.5, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.75, -1, -1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.75, -0.5, -1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -0.75, -1, 1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -0.75, -0.5, 1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.75, -1, -1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.75, -0.5, -1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0.75, -1, 1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="MeshInstance2/Spatial"]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0.75, -0.5, 1.29904 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 17 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="MeshInstance2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0 )
+mesh = ExtResource( 8 )
+material/0 = ExtResource( 18 )
+material/1 = ExtResource( 17 )
+material/2 = ExtResource( 16 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="MeshInstance2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38128, 0 )
+mesh = ExtResource( 11 )
+material/0 = ExtResource( 17 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 18 )
+material/3 = ExtResource( 18 )
+material/4 = ExtResource( 19 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance2"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -1, 0 )
+mesh = ExtResource( 9 )
+material/0 = ExtResource( 17 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 18 )
+material/3 = ExtResource( 18 )
+material/4 = ExtResource( 19 )
+material/5 = ExtResource( 16 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance2"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.85, -1, 0 )
+mesh = ExtResource( 10 )
+material/0 = ExtResource( 17 )
+material/1 = ExtResource( 16 )
+material/2 = ExtResource( 18 )
+material/3 = ExtResource( 18 )
+material/4 = ExtResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/deploying = SubResource( 6 )

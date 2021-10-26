@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/meteor.obj-333d0f985037007578242efa456d4fe6.mesh"
+
+[deps]
+
+files=[ "res://.import/meteor.obj-333d0f985037007578242efa456d4fe6.mesh" ]
+
+source_file="res://Assets/meteor.obj"
+dest_files=[ "res://.import/meteor.obj-333d0f985037007578242efa456d4fe6.mesh", "res://.import/meteor.obj-333d0f985037007578242efa456d4fe6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
